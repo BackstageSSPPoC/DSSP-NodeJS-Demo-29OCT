@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: DSSP-NodeJS-Demo-29OCT
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: DSSP-NodeJS-Demo-29OCT
+    sonarqube.org/project-key: dssp-nodejs-demo-29oct
+    github.com/project-slug: BackstageSSPPoC/DSSP-NodeJS-Demo-29OCT
+    argocd/app-name: dssp-nodejs-demo-29oct-dev
+    prometheus.io/rule: "kube_pod_status_phase{pod=~'dssp-nodejs-demo-29oct.*'}|phase,kube_pod_container_status_restarts_total{pod=~'dssp-nodejs-demo-29oct.*'}|container"
+    prometheus.io/alert: "KubePodCrashLooping,KubeDeploymentReplicasMismatch,KubePodNotReady,KubeContainerWaiting,KubeContainerOOMKilled,KubeDeploymentRolloutStuck"
+    prometheus.io/labels: "namespace=dev"
+    grafana/overview-dashboard: 'http://34.29.242.32/grafana/d/ffuuiuytw0f0gb/backstage-view?var-pod_prefix=dssp-nodejs-demo-29oct&var-namespace=dev&kiosk' 
+  tags:
+    - nodejs
+    - scaffolded
+spec:
+  type: service
+  lifecycle: Dev
+  owner: user:default/chaitanya-shekhar-pandey
+  system: dssp-platform
