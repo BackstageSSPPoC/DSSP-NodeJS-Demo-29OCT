@@ -1,5 +1,4 @@
 const http = require("http");
-const express = require("express");
 
 const PORT = process.env.PORT || 3000;
 const URL_PREFIX = process.env.URL_PREFIX || "";
