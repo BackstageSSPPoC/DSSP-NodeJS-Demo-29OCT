@@ -17,8 +17,8 @@ on:
 env:
   APP_NAME: dssp-nodejs-demo-29oct
   DOCKER_IMAGE: chaitanyapandeygspann/dssp-nodejs-demo-29oct
-  DEPLOY_ENV: qa
-  DEPLOY_NAMESPACE: qa
+  DEPLOY_ENV: uat
+  DEPLOY_NAMESPACE: uat
   APP_PORT: "3000"
   REPLICAS: "1"
 
