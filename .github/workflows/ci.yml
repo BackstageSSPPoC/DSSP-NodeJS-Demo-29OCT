@@ -17,10 +17,11 @@ on:
 env:
   APP_NAME: dssp-nodejs-demo-29oct
   DOCKER_IMAGE: chaitanyapandeygspann/dssp-nodejs-demo-29oct
-  DEPLOY_ENV: qa
-  DEPLOY_NAMESPACE: qa
+  DEPLOY_ENV: uat
+  DEPLOY_NAMESPACE: uat
   APP_PORT: "3000"
-  
+  REPLICAS: "1"
+
 permissions:
   contents: read
   packages: read
@@ -115,6 +116,7 @@ jobs:
             sed -i "s|\${APP_NAME}|${{ env.APP_NAME }}|g"          "$f"
             sed -i "s|\${DOCKER_IMAGE}|${{ env.IMAGE_TAG }}|g"     "$f"
             sed -i "s|\${APP_PORT}|${{ env.APP_PORT }}|g"          "$f"
+            sed -i "s|\${REPLICAS}|${{ env.REPLICAS }}|g"          "$f"
             sed -i "s|\${NAMESPACE}|${{ env.DEPLOY_NAMESPACE }}|g" "$f"
           done
           git config user.email "gha@local"
