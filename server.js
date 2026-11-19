@@ -5,7 +5,6 @@ const URL_PREFIX = process.env.URL_PREFIX || "";
 
 const server = http.createServer((req, res) => {
 
-  // Strip the prefix before route matching
   let path = req.url;
   if (URL_PREFIX && path.startsWith(URL_PREFIX)) {
     path = path.slice(URL_PREFIX.length) || "/";
